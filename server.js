@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const sqlDB = require("./config/database");
 dotenv.config();
+const sqlDB = require("./config/database");
+const redisClient = require("./config/redis");
 
 const port = process.env.PORT;
 
