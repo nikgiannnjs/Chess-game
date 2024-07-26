@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const sqlDB = require("./config/database");
 const redisClient = require("./config/redis");
 const path = require("path");
+const viewRoutes = require("./routes/views");
 dotenv.config();
 
 const port = process.env.PORT;
@@ -25,11 +26,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Server connection
-app.get("/", (req, res) => {
-  res.render("index");
-});
+//Routes
+app.use("/", viewRoutes);
 
+//Server connection
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });

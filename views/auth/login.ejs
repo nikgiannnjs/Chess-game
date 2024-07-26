@@ -1,8 +1,5 @@
 <%- include('../include/header') %>
-
 <div class="container">
-  <%- include('../include/partials/responseMessage') %>
-
   <form action="/api/login" method="POST" class="flex-center-column auth-form">
     <h1 class="flex-center-row">
       Login <img src="/assets/icons/user-check.svg" alt="User" />
@@ -10,7 +7,7 @@
 
     <div class="input-group">
       <label>Email</label>
-      <input type="email" name="email" placeholder="Enter your email..." />
+      <input type="email" name="email" placeholder="Enter your email" />
     </div>
 
     <div class="input-group">
@@ -18,7 +15,7 @@
       <input
         type="password"
         name="password"
-        placeholder="Enter your password..."
+        placeholder="Enter your password"
       />
     </div>
 
@@ -27,7 +24,4 @@
     <button type="submit" name="submit">Submit</button>
   </form>
 </div>
-
-<script src="js/responseMessage.js"></script>
-
 <%- include('../include/footer') %>
